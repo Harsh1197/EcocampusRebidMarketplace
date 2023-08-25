@@ -1,0 +1,134 @@
+.orders-placed-page {
+    padding: 20px;
+}
+
+.orders-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+}
+
+.order-item {
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.order-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.order-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-image-container {
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 4/3;
+}
+
+.order-image {
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 4/3;
+}
+
+.category-label {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 3px 6px;
+    background-color: rgba(228, 8, 8, 0.7);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.order-details {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-details:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.order-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+}
+
+.item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.item-category {
+    font-size: 12px;
+    color: #666;
+}
+
+.payment-amount {
+    font-weight: bold;
+    margin-top: 14px;
+    color: gray;
+}
+
+.payment-status {
+    font-weight: bold;
+    color: #2ecc71;
+    margin-top: 8px;
+}
+
+@media (max-width: 760px) {
+    .orders-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-item {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
