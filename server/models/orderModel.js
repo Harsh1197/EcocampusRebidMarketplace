@@ -6,7 +6,6 @@ const orderSchema = new mongoose.Schema({
         ref: 'catalogue'
     }],
     payment: {},
-
 },
 
     {

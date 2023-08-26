@@ -1,13 +1,13 @@
-.background {
+ .background {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(75deg, rgb(20, 23, 33) 0%, rgb(20, 23, 33) 50%, rgba(20, 23, 33, 0.8) 100%);
-}
+} 
 
-.backgroundchat {
+ .backgroundchat {
 
     width: 100vw;
     height: 100vh;
@@ -15,7 +15,7 @@
     display: table-cell;
     vertical-align: middle;
 
-}
+} 
 
 .curvy-line-container {
     position: relative;
@@ -43,7 +43,6 @@
 
 .form-title {
     font-size: 26px;
-    /* Adjust the font size as needed */
     font-family: 'Avenir';
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -97,4 +96,4 @@
 
 .auth-button:hover {
     filter: brightness(145%);
-}
+} 

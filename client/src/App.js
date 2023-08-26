@@ -33,11 +33,15 @@ function App() {
           <Route path='/admin' element={<UserValidation><Admin /></UserValidation>} />
           <Route path='/cart' element={<UserValidation><CartPage /></UserValidation>} />
           <Route path="/payment-success" element={<UserValidation><PaymentPage /></UserValidation>} />
-          <Route
+          {/* <Route
             path="/chat"
             element={user ? <ChatPage user={user} /> : <AuthPage onAuth={setUser} />}
 
-          />
+          /> */}
+          <Route
+                path="/chat"
+                element={ <UserValidation><ChatPage /></UserValidation>}
+            />
           <Route path="/auth" element={<AuthPage onAuth={setUser} />} />
         </Routes>
 
