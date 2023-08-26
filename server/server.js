@@ -10,9 +10,10 @@ app.use(cors({ origin: true }));
 app.post("/authenticate", async (req, res) => {
     const { username } = req.body;
     try {
+        console.log(username);
         const r = await axios.put(
             "https://api.chatengine.io/users/",
-            { username: username, secret: username, first_name: username },
+            { username: username, secret: username, firstname: username },
             { headers: { "Private-Key": process.env.CHAT_ENGINE_PRIVATE_KEY } }
         );
         return res.status(r.status).json(r.data);

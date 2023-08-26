@@ -20,10 +20,6 @@ const studentSchema = new mongoose.Schema({
         required: true
     },
 
-    verified: {
-        type: Boolean,
-    }
-    ,
     role: {
         type: String,
         default: "user"

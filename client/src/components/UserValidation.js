@@ -19,6 +19,7 @@ function UserValidation({ children }) {
     const [alerts, setAlert] = useState([]);
     const [displayAlert, setDisplayAlert] = useState(false);
     const [profileImage, setProfileImage] = useState('');
+    const dispatch = useDispatch();
     const fetchProfileImage = async () => {
         try {
 
@@ -36,8 +37,23 @@ function UserValidation({ children }) {
             console.error('Fetch Profile Image Error:', error);
         }
     };
-    const handleChatIconClick = () => {
-        navigate('/auth');
+    const handleChatIconClick = async () => {
+        const extractedUsername = user.name;
+    
+        try {
+            const response = await axios.post(
+                'http://localhost:3000/authenticate',
+                { username: extractedUsername }
+            );
+    
+            // const userData = { ...response.data, secret: extractedUsername };
+            // console.log("UserData:", userData);
+    
+            // dispatch(SetUser(userData)); 
+            navigate('/chat');
+        } catch (error) {
+            console.error("Authentication error:", error);
+        }
     }
 
     const fetchNotification = async () => {
