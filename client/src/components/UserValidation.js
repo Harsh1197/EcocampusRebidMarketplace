@@ -42,14 +42,9 @@ function UserValidation({ children }) {
     
         try {
             const response = await axios.post(
-                'http://localhost:3000/authenticate',
+                'https://ecocampusrebid.onrender.com/authenticate',
                 { username: extractedUsername }
             );
-    
-            // const userData = { ...response.data, secret: extractedUsername };
-            // console.log("UserData:", userData);
-    
-            // dispatch(SetUser(userData)); 
             navigate('/chat');
         } catch (error) {
             console.error("Authentication error:", error);

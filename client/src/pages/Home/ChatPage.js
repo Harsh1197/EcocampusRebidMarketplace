@@ -7,14 +7,13 @@ import { SetUser } from '../../redux/Users'; // Import your Redux action
 const ChatsPage = () => {
     const user = useSelector(state => state.users);
     const dispatch = useDispatch();
-console.log(process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID)
     useEffect(() => {
         const fetchData = async () => {
             const extractedUsername = user.name;
 
             try {
                 const response = await axios.post(
-                    'http://localhost:3000/authenticate',
+                    'https://ecocampusrebid.onrender.com/authenticate',
                     { username: extractedUsername }
                 );
 
