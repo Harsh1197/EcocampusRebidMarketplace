@@ -22,6 +22,7 @@ export const DeleteItem = async (id) => {
     }
 }
 
+
 export const UpdateItem = async (id, data) => {
     try {
         const response = await axiosObject.put(`/api/catalogue/update-item/${id}`, data);
@@ -79,6 +80,17 @@ export const createBid = async (payload) => {
     }
 }
 
+
+export const getBidsByProduct = async (productId) => {
+    try {
+        const response = await axiosObject.post('/api/bids/get-products-bid', { product: productId });
+
+        return response.data;
+    } catch (error) {
+        return { success: false, message: error.message };
+    }
+};
+
 export const getBids = async (filters) => {
     try {
 
@@ -91,4 +103,6 @@ export const getBids = async (filters) => {
         return error.message
     }
 }
+
+
 
