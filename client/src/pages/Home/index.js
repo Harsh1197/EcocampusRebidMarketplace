@@ -17,13 +17,14 @@ function Home() {
   const reference = React.useRef(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const [productFilters, setProductFilters] = useState({
     productStatus: 'Approved',
     category: [],
     age: [],
     price: [],
   });
-  const [highestBidAmounts, setHighestBidAmounts] = useState({}); // Store highest bids for each product
+  const [highestBidAmounts, setHighestBidAmounts] = useState({});
 
   const [products, setProducts] = useState([]);
   const [displayFilters, setDisplayFilters] = useState(true);
@@ -67,11 +68,14 @@ function Home() {
 
   const showModal = async (product) => {
     setSelectedProduct(product);
+   
     try {
+     
         const response = await getBids({ product: product._id });
         if (response.success && response.data.length > 0) {
           const highestBid = Math.max(...response.data.map((bid) => bid.productBidAmount));
           setAgreedAmount(highestBid); 
+
         } else {
           setAgreedAmount(0);
         }
@@ -79,6 +83,7 @@ function Home() {
         message.error(error.message);
       }
     setIsModalVisible(true);
+    console.log("selectedProduct:", user._id);
   };
 
   const handleModalOk = () => {
@@ -104,6 +109,8 @@ function Home() {
     getValues();
     
   }, [productFilters, user._id]);
+
+
 
   return (
     <div className="flex gap-4">
@@ -200,24 +207,24 @@ function Home() {
               <Form.Item label="Product Name" name="name" initialValue={selectedProduct?.name || ''}>
                 <Input type="text" disabled />
               </Form.Item>
-              <Form.Item
+              {/* <Form.Item
                 label="Student Email"
                 name="studentEmail"
                 rules={[
-                  { required: true, pattern: /^[a-zA-Z0-9._%+-]+@student\.bham\.ac\.uk$/, message: 'Please enter a valid University email' },
+                  { required: true, message: 'Please enter a valid University email' },
                 ]}
-                initialValue={user.email}
-              >
-                <Input type="email" disabled />
-              </Form.Item>
-              <Form.Item
-                label="Enter your Student Id"
+                initialValue={selectedProduct?.productSeller}
+              > */}
+                {/* <Input type="email" disabled />
+              </Form.Item> */}
+              {/* <Form.Item
+                label="Student Id"
                 name="studentId"
-                initialValue={user.id}
+                initialValue={selectedProduct?.id}
                 rules={[{ required: true, pattern: /^\d{7}$/, message: 'Please enter a valid 7-digit Student ID' }]}
-              >
-                <Input type="text" disabled />
-              </Form.Item>
+              > */}
+                {/* <Input type="text" disabled />
+              </Form.Item> */}
 
               <Form.Item label="Initial Listed Price" name="price" initialValue={selectedProduct?.price || ''}>
                 <Input type="number" disabled />

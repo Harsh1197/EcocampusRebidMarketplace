@@ -32,7 +32,11 @@ const itemsSchema = new mongoose.Schema({
         default: false,
         required: true
     },
-
+    productSeller: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "students",
+        required: true
+    },
     productUniqueRef: {
         type: String,
         required: true
@@ -63,11 +67,7 @@ const itemsSchema = new mongoose.Schema({
         default: "Pending",
         required: true
     },
-    productSeller: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "students",
-        required: true
-    },
+
 
 
 }, {

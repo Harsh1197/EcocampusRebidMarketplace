@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { PrettyChatWindow } from 'react-chat-engine-pretty';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import { SetUser } from '../../redux/Users'; // Import your Redux action
+import { SetUser } from '../../redux/Users'; 
 
 const ChatsPage = () => {
     const user = useSelector(state => state.users);

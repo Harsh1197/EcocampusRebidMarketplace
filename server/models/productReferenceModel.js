@@ -7,17 +7,6 @@ const productCartSchema = new mongoose.Schema({
         ref: 'catalogue'
     },
 
-
-    studentEmail: {
-        trim: true,
-        type: String,
-        required: true
-    },
-
-    studentId: {
-        type: Number,
-        required: true
-    },
     finalPrice: {
         type: Number,
         required: true

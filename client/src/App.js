@@ -15,7 +15,7 @@ import Search from './pages/SearchFilter';
 import CartPage from './pages/CartPage';
 import PaymentPage from './pages/PaymentPage';
 import ChatPage from './pages/Home/ChatPage';
-import AuthPage from './pages/Home/AuthPage';
+
 import OrdersPlaced from './pages/UserProfile/OrdersPlaced';
 function App() {
   const loading = useSelector(state => state.loaders);
@@ -42,7 +42,6 @@ function App() {
                 path="/chat"
                 element={ <UserValidation><ChatPage /></UserValidation>}
             />
-          <Route path="/auth" element={<AuthPage onAuth={setUser} />} />
         </Routes>
 
       </BrowserRouter>
