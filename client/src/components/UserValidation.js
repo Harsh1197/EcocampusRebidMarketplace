@@ -39,12 +39,11 @@ function UserValidation({ children }) {
     };
     const handleChatIconClick = async () => {
         const extractedUsername = user.name;
-    
         try {
             const response = await axios.post(
                 'https://ecocampusrebid.onrender.com/authenticate',
                 { username: extractedUsername }
-            );
+                );
             navigate('/chat');
         } catch (error) {
             console.error("Authentication error:", error);
@@ -103,6 +102,7 @@ function UserValidation({ children }) {
         if (user && user._id) {
             fetchProfileImage();
         }
+     
     }, [user]);
 
     if (!user) {

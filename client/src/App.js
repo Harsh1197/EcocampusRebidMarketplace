@@ -42,6 +42,7 @@ function App() {
                 path="/chat"
                 element={ <UserValidation><ChatPage /></UserValidation>}
             />
+    
         </Routes>
 
       </BrowserRouter>
