@@ -94,6 +94,11 @@ function Catalogue() {
             dataIndex: "productStatus"
         },
         {
+            title: "Product Key",
+            dataIndex: "productUniqueRef"
+        },
+       
+        {
             title: "Update Item",
             dataIndex: "edit"
             ,
@@ -119,7 +124,10 @@ function Catalogue() {
 
             ),
 
-        }]
+        },
+       
+    
+    ]
 
 
     return (
